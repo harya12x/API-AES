@@ -1,0 +1,57 @@
+{
+	"description": "The CodeIgniter framework",
+	"name": "codeigniter/framework",
+	"type": "project",
+	"homepage": "https://codeigniter.com",
+	"license": "MIT",
+	"support": {
+		"forum": "http://forum.codeigniter.com/",
+		"wiki": "https://github.com/bcit-ci/CodeIgniter/wiki",
+		"slack": "https://codeigniterchat.slack.com",
+		"source": "https://github.com/bcit-ci/CodeIgniter"
+	},
+	"require": {
+		"rubix/ml": "^2.4",
+		"php": ">=5.3.7",
+		"phpoffice/phpspreadsheet": "^1.29",
+		"react/event-loop": "^1.4",
+		"react/promise": "^2.10",
+		"ircmaxell/password-compat": "^1.0",
+		"phpmailer/phpmailer": "^6.8",
+		"kreait/firebase-php": "^7.5",
+		"cboden/ratchet": "^0.4.4",
+		"predis/predis": "^2.2",
+		"ramsey/uuid": "^4.7",
+		"smalot/pdfparser": "^2.7",
+		"web64/php-nlp-client": "^0.40.5",
+		"nadar/stemming": "^1.1",
+		"sastrawi/sastrawi": "1",
+		"yooper/php-text-analysis": "^1.9",
+		"davmixcool/php-sentiment-analyzer": "^1.2",
+		"stichoza/google-translate-php": "^5.1",
+		"thiagoalessio/tesseract_ocr": "*",
+		"spatie/pdf-to-image": "*",
+		"org_heigl/ghostscript": "*",
+		"calcinai/php-imagick": "*"
+	
+	},
+	"suggest": {
+		"paragonie/random_compat": "Provides better randomness in PHP 5.x"
+	},
+	"scripts": {
+		"test:coverage": [
+			"@putenv XDEBUG_MODE=coverage",
+			"phpunit --color=always --coverage-text --configuration tests/travis/sqlite.phpunit.xml"
+		],
+		"post-install-cmd": [
+			"sed -i s/name{0}/name[0]/ vendor/mikey179/vfsstream/src/main/php/org/bovigo/vfs/vfsStream.php"
+		],
+		"post-update-cmd": [
+			"sed -i s/name{0}/name[0]/ vendor/mikey179/vfsstream/src/main/php/org/bovigo/vfs/vfsStream.php"
+		]
+	},
+	"require-dev": {
+		"mikey179/vfsstream": "1.6.*",
+		"phpunit/phpunit": "4.* || 5.* || 9.*"
+	}
+}
