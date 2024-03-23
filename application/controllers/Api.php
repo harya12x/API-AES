@@ -27,7 +27,6 @@ class Api extends CI_Controller
         error_reporting(0);
         $this->load->helper('url');
         $this->load->helper('Sastrawi_helper');
-        $this->load->model('M_Spp');
         $this->load->library('password');
     } 
 
